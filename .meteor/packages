@@ -5,10 +5,8 @@
 
 meteor-platform
 autopublish
-insecure
 coffeescript
 mquandalle:jade
 reactive-dict
 accounts-ui
 accounts-facebook
-
