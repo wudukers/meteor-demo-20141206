@@ -4,11 +4,9 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
 coffeescript
 mquandalle:jade
 reactive-dict
 accounts-ui
 accounts-facebook
 iron:router
-
