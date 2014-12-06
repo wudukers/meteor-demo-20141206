@@ -20,7 +20,7 @@ template(name="index")
     h2 ID: {{_id}} 
     h2 Name: {{name}} 
     h2 Creator: {{creator}}
-    a(href="/chatroom/{{_id}}")
+    a(href="{{pathFor 'chatroom' chatroomId=_id}}")
       h2 Go to Chatroom
     hr
 

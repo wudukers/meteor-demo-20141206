@@ -12,7 +12,7 @@ Meteor.startup ->
       template: "index"
 
     @route "chatroom",
-      path: "/chatroom/:chatroomId"
+      path: "/chat/:chatroomId"
       template: "chatroom"
       data:
         meta: ->
