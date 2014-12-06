@@ -75,9 +75,9 @@ if Meteor.isClient
       
       e.stopPropagation()
       text = $("input.chatroomName").val()
+      $("input.chatroomName").val("")
 
       Meteor.call "createChatroom", text, (err, res)->
-        $("input.chatroomName").val("")
         if not err
           console.log "res = "
           console.log res
