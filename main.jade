@@ -22,3 +22,9 @@ template(name="main")
   h2 objData.def: {{objData.def}}
   h2 {{funData 2 6}}
   h2 {{funData "2" "6"}}
+  h2 reactiveArrData
+  ul
+    each reactiveArrData
+      li
+        h2 {{this}}
+
