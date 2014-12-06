@@ -9,4 +9,6 @@ insecure
 coffeescript
 mquandalle:jade
 reactive-dict
+accounts-ui
+accounts-facebook
 

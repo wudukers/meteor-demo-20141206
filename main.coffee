@@ -14,6 +14,8 @@ if Meteor.isClient
 
   Template.main.events
     "change .text": (e, t)->
+      user = Meteor.user()
+
       e.stopPropagation()
       username = $("input.username").val()
       text = $("input.text").val()
@@ -21,7 +23,7 @@ if Meteor.isClient
 
       postData = 
         text: text
-        author: username
+        author: user.profile.name
         postAt: postAt
 
       $("input.text").val ""
