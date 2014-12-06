@@ -12,5 +12,13 @@ template(name="main")
   h2 numData: {{numData}}
   h2 dateData: {{dateData}}
   h2 arrData: {{arrData}}
+  ul
+    each arrData
+      li
+        h2 {{this}}
+
   h2 objData: {{objData}}
-  
+  h2 objData.abc: {{objData.abc}}
+  h2 objData.def: {{objData.def}}
+  h2 {{funData 2 6}}
+  h2 {{funData "2" "6"}}
