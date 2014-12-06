@@ -30,17 +30,9 @@ template(name="chatroom")
   h2 Name: {{meta.name}} 
   h2 Creator: {{meta.creator}}
   hr
+  +chatArea
 
-
-//- body
-//-   //- {{> main}}
-//-   +main 
-
-//- <template name="main"></template>
-template(name="main")
-  hr
-  h2 Chatroom:
-  +loginButtons
+template(name="chatArea")
   h2 text:
   input.text
 
