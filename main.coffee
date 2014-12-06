@@ -31,6 +31,7 @@ Meteor.startup ->
       waitOn:->
         Session.set "chatroomId", @params.chatroomId
         Meteor.subscribe "partialChats", @params.chatroomId
+        Meteor.subscribe "chatrooms"
 
 Meteor.methods
   "createChatroom": (name)->
