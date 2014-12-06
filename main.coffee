@@ -66,10 +66,6 @@ Meteor.methods
     Chats.insert postData
 
 if Meteor.isClient
-  # Template.index.helpers
-  #   chatrooms: ->
-  #     Chatrooms.find({}, {sort:{createAt:-1}})
-
   Template.index.events
     "change .chatroomName": (e, t)->
       
@@ -85,12 +81,6 @@ if Meteor.isClient
         else
           console.log "err = "
           console.log err
-
-
-  # Template.chatArea.helpers
-  #   chats: ->
-  #     chatroomId = Session.get "chatroomId"      
-  #     Chats.find({chatroomId:chatroomId}, {sort:{postAt:-1}})
 
   Template.chatArea.events
     "change .text": (e, t)->
