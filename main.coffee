@@ -11,6 +11,20 @@ Meteor.startup ->
       path: "/"
       template: "index"
 
+    @route "chatroom",
+      path: "/chatroom/:chatroomId"
+      template: "chatroom"
+      data:
+        meta: ->
+          chatroomId = Session.get "chatroomId"
+          Chatrooms.findOne _id:chatroomId
+      
+      waitOn:->
+        Session.set "chatroomId", @params.chatroomId
+
+
+
+
 
 Meteor.methods
   "createChatroom": (name)->
