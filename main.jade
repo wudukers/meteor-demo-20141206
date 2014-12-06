@@ -2,4 +2,8 @@ head
   title MeteorDemo20141206
 
 body
-  h2 MeteorDemo20141206
+  //- {{> main}}
+  +main 
+
+template(name="main")
+  h2 Hello Main Template!
