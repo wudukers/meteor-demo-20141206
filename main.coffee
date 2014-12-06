@@ -9,7 +9,25 @@
 
 if Meteor.isClient
   Template.main.helpers
-    chats: Chats.find()
+    chats: ->
+      Chats.find({}, {sort:{postAt:-1}})
+
+  Template.main.events
+    "change .text": (e, t)->
+      e.stopPropagation()
+      username = $("input.username").val()
+      text = $("input.text").val()
+      postAt = new Date
+
+      postData = 
+        text: text
+        author: username
+        postAt: postAt
+
+      $("input.text").val ""
+
+      Chats.insert postData
+
 
 if Meteor.isServer
   if Chats.find().count() is 0

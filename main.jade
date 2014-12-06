@@ -8,10 +8,16 @@ body
 //- <template name="main"></template>
 template(name="main")
   hr
-  h2 Chats:
+  h2 Chatroom:
+  h2 username:
+  input.username
+  h2 text:
+  input.text
+
   each chats
     hr
-    h2 {{author}}: {{text}}
+    h2 {{author}}: {{text}} 
+    p {{postAt}}
     hr  
 
   
