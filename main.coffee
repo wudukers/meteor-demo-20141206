@@ -5,7 +5,12 @@
   {text:"hello3", author:"c3h3"},
 ]
 
+@Chats = new Meteor.Collection "chats"
+
 if Meteor.isClient
   Template.main.helpers
-    chats: chats
-    
+    chats: Chats.find()
+
+if Meteor.isServer
+  if Chats.find().count() is 0
+    Chats.insert chat for chat in chats
