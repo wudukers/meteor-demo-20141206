@@ -1,0 +1,15 @@
+template(name="index")
+  h2 I am index template!
+  hr
+  +loginButtons
+  h2 Create Chatroom:
+  input.chatroomName
+  hr
+  each chatrooms
+    hr
+    h2 ID: {{_id}} 
+    h2 Name: {{name}} 
+    h2 Creator: {{creator}}
+    a(href="{{pathFor 'chatroom' chatroomId=_id}}")
+      h2 Go to Chatroom
+    hr

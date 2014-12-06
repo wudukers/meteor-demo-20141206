@@ -1,0 +1,20 @@
+
+template(name="chatroom")
+  hr
+  h2 ID: {{meta._id}} 
+  h2 Name: {{meta.name}} 
+  h2 Creator: {{meta.creator}}
+  hr
+  +chatArea
+
+template(name="chatArea")
+  h2 text:
+  input.text
+
+  each chats
+    hr
+    h2 {{author}}: {{text}} 
+    p {{postAt}}
+    hr  
+
+  
