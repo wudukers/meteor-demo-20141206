@@ -34,10 +34,4 @@ if Meteor.isClient
         else
           console.log "err = "
           console.log err
-
-if Meteor.isServer
-  Meteor.publish "partialChats", (chatroomId)->
-    Chats.find({chatroomId:chatroomId})    
-
-  Meteor.publish "chatrooms", ->
-    Chatrooms.find()    
+  
