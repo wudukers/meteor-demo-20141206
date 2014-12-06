@@ -1,20 +1,11 @@
 
-@arrData = [10..8].map String
-@reactiveArrData = new ReactiveDict
-@reactiveArrData.set("array", arrData);
+@chats = [
+  {text:"hello1", author:"c3h3"},
+  {text:"hello2", author:"c3h3"},
+  {text:"hello3", author:"c3h3"},
+]
 
 if Meteor.isClient
   Template.main.helpers
-    strData: "String Data"
-    numData: 123.4321
-    dateData: new Date
-    arrData: arrData
-    objData: 
-      abc: "1234"
-      def: new Date
-
-    funData: (x,y)->
-      x+y
-
-    reactiveArrData: ->
-      reactiveArrData.get "array"
+    chats: chats
+    
