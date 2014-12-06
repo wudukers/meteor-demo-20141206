@@ -10,3 +10,5 @@ mquandalle:jade
 reactive-dict
 accounts-ui
 accounts-facebook
+iron:router
+
