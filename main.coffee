@@ -14,6 +14,8 @@ Meteor.startup ->
         chatrooms: ->
           Chatrooms.find({}, {sort:{createAt:-1}})
 
+      waitOn: ->
+        Meteor.subscribe "chatrooms"
 
     @route "chatroom",
       path: "/chat/:chatroomId"
@@ -24,11 +26,11 @@ Meteor.startup ->
           Chatrooms.findOne _id:chatroomId
         chats: ->
           chatroomId = Session.get "chatroomId"      
-          Chats.find({chatroomId:chatroomId}, {sort:{postAt:-1}})
-
+          Chats.find({}, {sort:{postAt:-1}})
       
       waitOn:->
         Session.set "chatroomId", @params.chatroomId
+        Meteor.subscribe "partialChats", @params.chatroomId
 
 Meteor.methods
   "createChatroom": (name)->
@@ -108,4 +110,9 @@ if Meteor.isClient
           console.log "err = "
           console.log err
 
+if Meteor.isServer
+  Meteor.publish "partialChats", (chatroomId)->
+    Chats.find({chatroomId:chatroomId})    
 
+  Meteor.publish "chatrooms", ->
+    Chatrooms.find()    
